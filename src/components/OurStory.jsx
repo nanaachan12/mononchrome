@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 export function OurStory({ story }) {
   return (
     <section className="py-32 px-6 bg-white relative">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <motion.div
           className="text-center mb-24"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
@@ -15,32 +15,32 @@ export function OurStory({ story }) {
           <p className="font-sans text-gray text-sm tracking-widest uppercase">The chapters of us</p>
         </motion.div>
 
-        <div className="flex flex-col gap-24 relative">
-          {/* Vertical Line */}
-          <div className="absolute left-6 md:left-12 top-0 bottom-0 w-px bg-light/50" />
-
-          {story.map((item, index) => (
-            <motion.div 
-              key={index}
-              className="flex flex-col md:flex-row gap-8 md:gap-16 items-start relative z-10"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, delay: index * 0.15, ease: "easeOut" }}
-            >
-              <div className="bg-white py-4 pr-6 font-serif text-5xl md:text-6xl text-light w-20 md:w-32 shrink-0">
-                {item.number}
-              </div>
-              <div className="flex-1 pt-6 border-t border-light/30">
-                <h4 className="font-sans text-xs tracking-[0.3em] uppercase text-black mb-4">
-                  {item.title}
-                </h4>
-                <p className="font-serif italic text-2xl md:text-3xl text-gray leading-relaxed">
+        <div className="flex flex-col gap-16 md:gap-24 relative w-full">
+          {story.map((item, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <motion.div 
+                key={index}
+                className={`flex flex-col w-full md:w-[80%] lg:w-1/2 ${isEven ? 'self-start items-start text-left md:pr-12' : 'self-end items-end text-right md:pl-12'} relative z-10`}
+                initial={{ opacity: 0, scale: 0.8, y: 40 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+              >
+                <div className="flex flex-col gap-4 mb-6">
+                  <span className="font-serif text-6xl md:text-7xl text-light/40 leading-none">
+                    {item.number}
+                  </span>
+                  <h4 className="font-sans text-xs tracking-[0.3em] uppercase text-black">
+                    {item.title}
+                  </h4>
+                </div>
+                <p className="font-serif italic text-2xl md:text-4xl text-gray leading-relaxed">
                   "{item.description}"
                 </p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

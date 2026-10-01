@@ -6,22 +6,48 @@ export function Opening() {
       <div className="absolute top-0 w-px h-32 bg-gradient-to-b from-transparent to-light" />
       
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={{
+          visible: { transition: { staggerChildren: 0.4 } }
+        }}
         className="max-w-xl mx-auto"
       >
-        <h2 className="text-3xl md:text-5xl font-serif italic text-dark mb-12 leading-relaxed tracking-wide">
+        <motion.h2 
+          variants={{
+            hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+            visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 1.5, ease: [0.21, 0.47, 0.32, 0.98] } }
+          }}
+          className="text-3xl md:text-5xl font-serif italic text-dark mb-12 leading-relaxed tracking-wide"
+        >
           "Two souls,<br />one beautiful journey."
-        </h2>
+        </motion.h2>
         
         <div className="flex items-center justify-center gap-6">
-          <div className="w-12 h-px bg-light" />
-          <p className="font-sans text-gray uppercase tracking-[0.4em] text-xs">
+          <motion.div 
+            variants={{
+              hidden: { width: 0, opacity: 0 },
+              visible: { width: 48, opacity: 1, transition: { duration: 1.5, ease: "easeOut" } }
+            }}
+            className="h-px bg-light" 
+          />
+          <motion.p 
+            variants={{
+              hidden: { opacity: 0, filter: "blur(8px)" },
+              visible: { opacity: 1, filter: "blur(0px)", transition: { duration: 1.5, ease: "easeOut" } }
+            }}
+            className="font-signature text-4xl text-dark capitalize mb-1 mt-1"
+          >
             Sang Zhi & Duan Jiaxu
-          </p>
-          <div className="w-12 h-px bg-light" />
+          </motion.p>
+          <motion.div 
+            variants={{
+              hidden: { width: 0, opacity: 0 },
+              visible: { width: 48, opacity: 1, transition: { duration: 1.5, ease: "easeOut" } }
+            }}
+            className="h-px bg-light" 
+          />
         </div>
       </motion.div>
     </section>

@@ -32,7 +32,7 @@ export function MusicPlayer({ src, autoPlay }) {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 1 }}
         onClick={togglePlay}
-        className="fixed bottom-6 right-6 z-40 w-12 h-12 bg-white rounded-full border border-light shadow-sm flex items-center justify-center hover:bg-offwhite transition-colors"
+        className="fixed bottom-24 right-6 z-40 w-12 h-12 bg-white/90 backdrop-blur-md rounded-full border border-light/50 shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center justify-center hover:bg-offwhite transition-colors"
         aria-label={isPlaying ? "Pause music" : "Play music"}
       >
         <motion.div

@@ -1,7 +1,8 @@
 import duanImg from '../assets/duan.jpg';
 import fotoImg from '../assets/foto.jpg';
 import foto1Img from '../assets/foto1.jpg';
-import heroImg from '../assets/hero.png';
+import foto2Img from '../assets/foto2.jpg';
+import foto3Img from '../assets/foto3.jpg';
 import lusiImg from '../assets/lusi.png';
 import pictureImg from '../assets/picture.png';
 
@@ -30,8 +31,8 @@ export const invitationData = {
       time: "09:00 WIB",
       venue: "The Grand Monochrome Hall",
       address: "123 Elegance Avenue, Jakarta",
-      mapUrl: "#", 
-      calendarUrl: "#" 
+      mapUrl: "https://maps.google.com/?q=The+Grand+Monochrome+Hall",
+      calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Ceremony+Sang+Zhi+%26+Duan+Jiaxu&dates=20261018T020000Z/20261018T040000Z&details=Wedding+Ceremony&location=The+Grand+Monochrome+Hall"
     },
     {
       title: "RECEPTION",
@@ -39,8 +40,8 @@ export const invitationData = {
       time: "11:00 WIB",
       venue: "The Grand Monochrome Hall",
       address: "123 Elegance Avenue, Jakarta",
-      mapUrl: "#", 
-      calendarUrl: "#" 
+      mapUrl: "https://maps.google.com/?q=The+Grand+Monochrome+Hall",
+      calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Reception+Sang+Zhi+%26+Duan+Jiaxu&dates=20261018T040000Z/20261018T060000Z&details=Wedding+Reception&location=The+Grand+Monochrome+Hall"
     }
   ],
   story: [
@@ -66,8 +67,12 @@ export const invitationData = {
     }
   ],
   gallery: [
-    { src: fotoImg, alt: "Sang Zhi & Duan Jiaxu 1" },
-    { src: foto1Img, alt: "Sang Zhi & Duan Jiaxu 2" }
+    { src: fotoImg, alt: "Gallery 1" },
+    { src: foto1Img, alt: "Gallery 2" },
+    { src: foto2Img, alt: "Gallery 3" },
+    { src: foto3Img, alt: "Gallery 4" },
+    { src: pictureImg, alt: "Gallery 5" },
+    { src: lusiImg, alt: "Gallery 6" }
   ],
   gifts: [
     {
@@ -81,6 +86,6 @@ export const invitationData = {
       accountName: "Duan Jiaxu"
     }
   ],
-  musicPath: "/music/wedding-song.mp3",
+  musicPath: "/music/music.mp3",
   coverImage: pictureImg
 };

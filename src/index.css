@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Bodoni Moda', serif;
+  --font-serif: 'Cormorant Garamond', serif;
   --font-mono: 'Montserrat', sans-serif;
+  --font-signature: 'Alex Brush', cursive;
   --color-black: #111111;
   --color-dark: #2B2B2B;
   --color-gray: #777777;
@@ -38,5 +39,17 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
   }
 }

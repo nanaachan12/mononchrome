@@ -44,10 +44,10 @@ export function RSVPAndWishes() {
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-24"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
           <h3 className="font-serif text-4xl md:text-5xl tracking-wide mb-6">RSVP & WISHES</h3>
           <p className="font-sans text-gray text-sm tracking-widest uppercase">We look forward to celebrating with you.</p>
@@ -56,10 +56,10 @@ export function RSVPAndWishes() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Form Section */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.95, x: -30 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
             <h4 className="font-serif text-2xl mb-10 pb-4 border-b border-light">Confirm Attendance</h4>
             <form onSubmit={handleSubmit} className="flex flex-col gap-8">
@@ -151,10 +151,10 @@ export function RSVPAndWishes() {
 
           {/* Wishes Display Section */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.4 }}
+            initial={{ opacity: 0, scale: 0.95, x: 30 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="bg-offwhite p-8 md:p-12"
           >
             <h4 className="font-serif text-2xl mb-10 pb-4 border-b border-light">Guestbook</h4>

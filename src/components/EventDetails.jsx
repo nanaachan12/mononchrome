@@ -8,10 +8,10 @@ export function EventDetails({ events }) {
           <motion.div 
             key={index}
             className="flex flex-col items-center text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0, scale: 0.9, y: 40 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: index * 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
             <h3 className="font-serif text-3xl md:text-4xl tracking-wide mb-8">{event.title}</h3>
             

@@ -14,10 +14,10 @@ export function Gift({ gifts }) {
     <section className="py-24 px-6 bg-white border-t border-light">
       <div className="max-w-2xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, scale: 0.9, y: 20, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: [0.21, 0.47, 0.32, 0.98] }}
         >
           <h3 className="font-serif text-3xl md:text-4xl tracking-wide mb-6">WEDDING GIFT</h3>
           <p className="font-sans text-gray text-sm mb-16 leading-relaxed max-w-md mx-auto">
@@ -30,10 +30,10 @@ export function Gift({ gifts }) {
             <motion.div 
               key={index}
               className="w-full max-w-sm border border-light p-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.2 + index * 0.1 }}
+              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1, delay: 0.2 + index * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
             >
               <h5 className="font-serif text-xl mb-4">{gift.bank}</h5>
               <p className="font-sans text-sm tracking-widest mb-1">{gift.accountNumber}</p>

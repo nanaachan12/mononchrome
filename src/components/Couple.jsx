@@ -15,10 +15,10 @@ export function Couple({ data }) {
         {/* Bride Section */}
         <motion.div 
           className="flex flex-col items-center w-full max-w-sm"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, x: -40, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1.2, ease: [0.21, 0.47, 0.32, 0.98] }}
         >
           <div 
             className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-10 border border-light p-2 cursor-pointer group"
@@ -36,7 +36,7 @@ export function Couple({ data }) {
           </div>
           
           <span className="font-sans text-xs tracking-[0.4em] uppercase text-gray mb-6">Bride</span>
-          <h3 className="font-serif text-4xl mb-4 tracking-wide">{data.bride.name}</h3>
+          <h3 className="font-signature text-5xl md:text-6xl mb-4 font-normal capitalize">{data.bride.name}</h3>
           <p className="font-sans text-sm text-gray max-w-[200px] leading-relaxed">
             {data.bride.parents}
           </p>
@@ -61,10 +61,10 @@ export function Couple({ data }) {
         {/* Groom Section */}
         <motion.div 
           className="flex flex-col items-center w-full max-w-sm"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.2 }}
+          initial={{ opacity: 0, x: 40, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1.2, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
         >
           <div 
             className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-10 border border-light p-2 cursor-pointer group"
@@ -82,7 +82,7 @@ export function Couple({ data }) {
           </div>
 
           <span className="font-sans text-xs tracking-[0.4em] uppercase text-gray mb-6">Groom</span>
-          <h3 className="font-serif text-4xl mb-4 tracking-wide">{data.groom.name}</h3>
+          <h3 className="font-signature text-5xl md:text-6xl mb-4 font-normal capitalize">{data.groom.name}</h3>
           <p className="font-sans text-sm text-gray max-w-[200px] leading-relaxed">
             {data.groom.parents}
           </p>
